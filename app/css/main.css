@@ -44,3 +44,15 @@ html, body {
     font: 10px sans-serif;
     text-anchor: middle;
 }
+
+.bar {
+    fill: steelblue;
+}
+
+.bar:hover {
+    fill: brown;
+}
+
+.axis--x path {
+    display: none;
+}
