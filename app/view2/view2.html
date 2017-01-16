@@ -1,0 +1,22 @@
+<p>This is the partial for the info view.</p>
+<!--<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>-->
+<table>
+    <title >Weather table</title>
+    <tr>
+        <th ng-repeat="name in columns">{{name}}</th>
+    </tr>
+    <tr ng-repeat="x in data">
+        <td>{{ x.date }}</td>
+        <td>{{ x.pressure | number : 2}}</td>
+        <td>{{ x.rainfall | number : 5 }}</td>
+        <td>{{ x.windSpeed | number : 3 }}</td>
+        <td>{{ x.windDirection | number : 2 }}</td>
+        <td>{{ x.temperature | number : 0 }}</td>
+        <td>{{ x.humidity | number : 0 }}</td>
+        <td>{{ x.solarFlux | number : 1 }}</td>
+        <td>{{ x.battery | number : 1 }}</td>
+    </tr>
+</table>
