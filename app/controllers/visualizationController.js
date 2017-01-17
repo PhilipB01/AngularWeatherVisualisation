@@ -1,10 +1,7 @@
 'use strict';
 
 app.controller('VisualizationCtrl', ['$scope', 'dataService', 'd3Service', function($scope, dataService, d3Service) {
-    $scope.result = {
-        statusText: "Wait",
-        status: 800
-    };
+
     $scope.columns = [
             "dateTime",
             "pressure (mBar)",
@@ -67,7 +64,6 @@ app.controller('VisualizationCtrl', ['$scope', 'dataService', 'd3Service', funct
             $scope.data = reduceData(data, 7);
             //$scope.columns = data.columns;
         });
-        //$scope.data = processDataDaily(dataResponse.data);
 
     });
 

@@ -90,5 +90,6 @@ rect:hover {
     text-anchor: middle;
 }
 
-table {
+table td {
+    padding-left: 20px;
 }
