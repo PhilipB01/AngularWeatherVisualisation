@@ -14,6 +14,11 @@ html, body {
     width: 50%;
 }
 
+h2 {
+    padding: 10px 80px;
+    font-size: 20px;
+}
+
 .main {
     background-color: #f2f2f2 ;
     padding: 30px 0 80px;
@@ -26,33 +31,60 @@ html, body {
     padding: 20px 20px;
 }
 
-.visualisation {
-    position: relative;
-    width: 1000px;
-    height: 600px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.chart rect {
+rect {
     fill: steelblue;
 }
 
-.chart text {
+text {
+    fill: black;
+    font: 10px sans-serif;
+}
+
+.marker {
     fill: white;
+    text-anchor: middle;
+}
+
+rect {
+    fill: orange;
+}
+
+rect:hover {
+    fill: #d9a531;
+}
+
+.label {
+    font: 16px sans-serif;
+    text-anchor: middle;
+}
+
+.axis text {
     font: 10px sans-serif;
     text-anchor: middle;
 }
 
-.bar {
-    fill: steelblue;
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.barChart {
+    float: left;
 }
 
-.bar:hover {
-    fill: brown;
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
 }
 
-.axis--x path {
-    display: none;
+.humidityGauge {
+    float: right;
+}
+
+.gaugemarker {
+    fill: white;
+    font: 14px sans-serif;
+    text-anchor: middle;
 }
