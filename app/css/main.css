@@ -81,10 +81,14 @@ rect:hover {
 
 .humidityGauge {
     float: right;
+    margin-right: 80px;
 }
 
 .gaugemarker {
     fill: white;
     font: 14px sans-serif;
     text-anchor: middle;
+}
+
+table {
 }

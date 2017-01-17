@@ -5,10 +5,20 @@ app.controller('VisualizationCtrl', ['$scope', 'dataService', 'd3Service', funct
         statusText: "Wait",
         status: 800
     };
-    $scope.columns = [];
+    $scope.columns = [
+            "dateTime",
+            "pressure (mBar)",
+            "rainfall (mm)",
+            "wind speed (m/s)",
+            "wind direction (deg)",
+            "surface temp (°C)",
+            "humidity (%)"
+    ];
     $scope.data = [];
     $scope.currentMonth = "January";
-    $scope.currentDay;
+    $scope.currentDay = "";
+    $scope.currentDayItem = [];
+    $scope.humidity = 0;
 
     $scope.onBarClick = function(item) {
         $scope.$apply(function() {
@@ -25,15 +35,15 @@ app.controller('VisualizationCtrl', ['$scope', 'dataService', 'd3Service', funct
 
     $scope.onDayClick = function(item) {
         $scope.$apply(function() {
-            console.log("Day click!");
-            console.log(item);
+            //console.log("Day click!");
             /*if (!$scope.showHumidityPanel)
              $scope.showHumidityPanel = true;*/
             $scope.humidity = item.value.humidity;
-            console.log("Humidity is: " + $scope.humidity);
+            //console.log("Humidity is: " + $scope.humidity);
 
             $scope.currentDay = formatDate(item.key);
-            console.log($scope.currentDay);
+            $scope.currentDayItem = [item];
+            console.log(item);
         });
     }
 
@@ -55,7 +65,7 @@ app.controller('VisualizationCtrl', ['$scope', 'dataService', 'd3Service', funct
 
             $scope.parsedData = data;
             $scope.data = reduceData(data, 7);
-            $scope.columns = data.columns;
+            //$scope.columns = data.columns;
         });
         //$scope.data = processDataDaily(dataResponse.data);
 

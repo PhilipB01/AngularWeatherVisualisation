@@ -31,6 +31,22 @@
     <weather-visualization val="monthData" height="280" on-click="onDayClick(item)"></weather-visualization>
   </div>
 
+  <table>
+    <title >Weather table</title>
+    <tr>
+      <th ng-repeat="name in columns">{{name}}</th>
+    </tr>
+    <tr ng-repeat="x in currentDayItem">
+      <td>{{ x.key }}</td>
+      <td>{{ x.value.pressure | number : 0}}</td>
+      <td>{{ x.value.rainfall | number : 1 }}</td>
+      <td>{{ x.value.windSpeed | number : 1 }}</td>
+      <td>{{ x.value.windDirection | number : 0 }}</td>
+      <td>{{ x.value.temperature | number : 1 }}</td>
+      <td>{{ x.value.humidity | number : 0 }}</td>
+    </tr>
+  </table>
+
   <!--<script src="https://d3js.org/d3.v4.js"></script>-->
   <script src="bower_components/angular/angular.js"></script>
 

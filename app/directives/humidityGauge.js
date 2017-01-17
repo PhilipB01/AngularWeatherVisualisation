@@ -1,5 +1,7 @@
 'use strict';
 
+/* uses Arc Tween implementation from here: https://bl.ocks.org/mbostock/5100636 */
+
 app.directive('humidityVisualization', ['d3Service', function (d3Service) {
 
     return {

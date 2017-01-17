@@ -66,7 +66,7 @@ app.directive('weatherVisualization', ['d3Service', '$timeout', function (d3Serv
                     var xScale = d3.scaleBand()
                         .domain(data.map(function(d) { return formatDate(d.key); }))
                         .rangeRound([0, width])
-                        .padding([0.1]);
+                        .padding([0.05]);
 
                     // define the line
                     var valueline = d3.line()
@@ -111,7 +111,6 @@ app.directive('weatherVisualization', ['d3Service', '$timeout', function (d3Serv
                             .attr("width", xScale.bandwidth())
                             .on('click', function (d, i) {
                                 d3.selectAll('.bar').style("fill", "orange");
-                                console.log(d);
                                 if (this.classList.contains("bar")) {
                                     d3.select(this).style("fill", color(2));
                                 }
